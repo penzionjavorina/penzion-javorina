@@ -5,20 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Penzión Javorina Duchonka</title>
   <style>
-    :root {
-      --cream: #fbf7ef;
-      --sand: #efe3cf;
-      --green: #3f5f3a;
-      --green-dark: #23351f;
-      --brown: #8a5f3d;
-      --wood: #b98b5d;
-      --text: #273025;
-      --muted: #6f766b;
-      --white: #ffffff;
-      --shadow: 0 20px 50px rgba(51, 64, 43, 0.12);
-      --radius: 28px;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -30,404 +16,342 @@
     }
 
     body {
-      font-family: Inter, Arial, sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.7;
+      font-family: Arial, sans-serif;
+      background: #f7f3ea;
+      color: #263021;
+      line-height: 1.6;
     }
 
     img {
-      max-width: 100%;
+      width: 100%;
       display: block;
     }
 
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     nav {
-      position: fixed;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(1120px, calc(100% - 28px));
-      z-index: 20;
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 999px;
-      box-shadow: 0 12px 32px rgba(35, 53, 31, 0.12);
-      padding: 12px 18px;
+      background: #ffffff;
+      border-bottom: 1px solid #e6dece;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      align-items: center;
+      gap: 20px;
     }
 
     .logo {
-      font-weight: 800;
-      color: var(--green-dark);
-      letter-spacing: -0.03em;
-      white-space: nowrap;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2f4f2f;
     }
 
     .menu {
       display: flex;
-      gap: 20px;
+      gap: 22px;
       flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
     .menu a {
-      color: var(--green-dark);
+      color: #263021;
       text-decoration: none;
-      font-size: 0.95rem;
       font-weight: 600;
-      opacity: 0.82;
+      font-size: 0.95rem;
     }
 
     .menu a:hover {
-      opacity: 1;
-      color: var(--brown);
-    }
-
-    header {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 130px 20px 70px;
-      background:
-        linear-gradient(90deg, rgba(35, 53, 31, 0.72), rgba(35, 53, 31, 0.25)),
-        url("penzion-exterier.jpg");
-      background-size: cover;
-      background-position: center;
-      color: white;
+      color: #6b4a2f;
     }
 
     .hero {
-      width: min(1120px, 100%);
+      background: #ffffff;
+    }
+
+    .hero-grid {
+      max-width: 1120px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 40px;
-      align-items: end;
+      grid-template-columns: 1fr 1fr;
+      min-height: 620px;
     }
 
     .hero-text {
-      max-width: 760px;
+      padding: 80px 50px 80px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 18px;
-      padding: 9px 15px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #fff7ed;
+    .tag {
+      color: #6b4a2f;
       font-weight: 700;
-      backdrop-filter: blur(8px);
+      margin-bottom: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
     }
 
     h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3rem, 8vw, 6.7rem);
-      line-height: 0.95;
-      letter-spacing: -0.055em;
+      font-size: clamp(2.7rem, 6vw, 5.3rem);
+      line-height: 1;
       margin-bottom: 24px;
+      color: #263021;
+      letter-spacing: -0.05em;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 650px;
-      color: #fffaf0;
-      margin-bottom: 32px;
+    .hero-text p {
+      font-size: 1.15rem;
+      color: #5f665a;
+      max-width: 520px;
+      margin-bottom: 30px;
+    }
+
+    .hero-image {
+      background: url("penzion-budova.jpg") center/cover no-repeat;
+      min-height: 420px;
     }
 
     .buttons {
       display: flex;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 14px;
     }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: var(--cream);
-      color: var(--green-dark);
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: 800;
-      transition: 0.2s;
+      font-weight: 700;
+      transition: 0.2s ease;
     }
 
-    .button.secondary {
-      background: rgba(255, 255, 255, 0.16);
+    .btn.primary {
+      background: #2f4f2f;
       color: white;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(8px);
     }
 
-    .button:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
+    .btn.secondary {
+      background: #efe7d8;
+      color: #263021;
     }
 
-    .hero-card {
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--text);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-    }
-
-    .hero-card h3 {
-      color: var(--green-dark);
-      margin-bottom: 10px;
-      font-size: 1.25rem;
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     section {
-      padding: 92px 20px;
+      padding: 80px 0;
     }
 
-    .container {
-      width: min(1120px, 100%);
-      margin: auto;
-    }
-
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 38px;
+    .section-title {
+      max-width: 720px;
+      margin-bottom: 36px;
     }
 
     h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.03;
-      letter-spacing: -0.045em;
-      color: var(--green-dark);
-      margin-bottom: 16px;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.1;
+      color: #263021;
+      margin-bottom: 14px;
+      letter-spacing: -0.035em;
     }
 
-    .muted {
-      color: var(--muted);
-      font-size: 1.08rem;
+    .section-title p,
+    .text-muted {
+      color: #66705f;
+      font-size: 1.05rem;
     }
 
-    .split {
+    .about-grid {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 38px;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
       align-items: center;
     }
 
-    .image-stack {
-      display: grid;
-      grid-template-columns: 1fr 0.72fr;
-      gap: 18px;
-      align-items: end;
-    }
-
-    .image-stack img,
-    .gallery img {
-      width: 100%;
-      height: 100%;
+    .about-photo img {
+      height: 430px;
       object-fit: cover;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      border-radius: 14px;
     }
 
-    .image-stack .big {
-      min-height: 440px;
+    .about-text {
+      background: #ffffff;
+      padding: 38px;
+      border-radius: 14px;
+      border: 1px solid #e6dece;
     }
 
-    .image-stack .small {
-      min-height: 310px;
+    .features {
+      background: #ffffff;
+      border-top: 1px solid #e6dece;
+      border-bottom: 1px solid #e6dece;
     }
 
-    .cards {
+    .features-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(138, 95, 61, 0.12);
-      border-radius: var(--radius);
+    .feature {
       padding: 26px;
-      box-shadow: var(--shadow);
+      background: #f7f3ea;
+      border-radius: 14px;
+      border: 1px solid #e6dece;
     }
 
-    .card .icon {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: var(--sand);
-      margin-bottom: 18px;
-      font-size: 1.35rem;
+    .feature span {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 12px;
     }
 
-    .card h3 {
-      color: var(--green-dark);
+    .feature h3 {
       margin-bottom: 8px;
-      font-size: 1.2rem;
+      color: #2f4f2f;
     }
 
-    .warm {
-      background: linear-gradient(180deg, var(--cream), #f3eadb);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr 1fr;
-      grid-auto-rows: 230px;
-      gap: 18px;
-    }
-
-    .gallery img:nth-child(1) {
-      grid-row: span 2;
-    }
-
-    .gallery img:nth-child(4) {
-      grid-column: span 2;
-    }
-
-    .rooms {
+    .rooms-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
-    .room-card {
-      background: white;
-      border-radius: var(--radius);
+    .room {
+      background: #ffffff;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(138, 95, 61, 0.12);
+      border: 1px solid #e6dece;
     }
 
-    .room-card img {
-      height: 250px;
-      width: 100%;
+    .room img {
+      height: 260px;
       object-fit: cover;
     }
 
-    .room-card div {
+    .room-content {
       padding: 24px;
     }
 
-    .room-card h3 {
-      color: var(--green-dark);
+    .room-content h3 {
+      color: #2f4f2f;
       margin-bottom: 8px;
     }
 
-    .contact-section {
-      background: var(--green-dark);
-      color: white;
+    .gallery {
+      background: #ffffff;
     }
 
-    .contact-section h2,
-    .contact-section .muted {
-      color: white;
-    }
-
-    .contact-grid {
+    .gallery-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
     }
 
-    .contact-box {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: var(--radius);
-      padding: 30px;
+    .gallery-grid img {
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
-    .contact-box a {
-      color: #f4e2c5;
-      text-decoration: none;
+    .gallery-grid img:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+      height: 452px;
+    }
+
+    .contact {
+      background: #263021;
+      color: white;
+    }
+
+    .contact h2,
+    .contact .section-title p {
+      color: white;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      color: #263021;
+      border-radius: 14px;
+      padding: 34px;
+      max-width: 620px;
+    }
+
+    .contact-card p {
+      margin-bottom: 10px;
+    }
+
+    .contact-card a {
+      color: #2f4f2f;
       font-weight: 700;
-    }
-
-    .contact-photo {
-      min-height: 380px;
-      border-radius: var(--radius);
-      background: url("penzion-terasa.jpg") center/cover;
-      box-shadow: var(--shadow);
+      text-decoration: none;
     }
 
     footer {
-      background: #172214;
-      color: #d9e4d2;
+      background: #1b2418;
+      color: #d7ddcf;
       text-align: center;
-      padding: 28px 20px;
+      padding: 26px 20px;
     }
 
-    @media (max-width: 950px) {
-      .hero,
-      .split,
-      .contact-grid {
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .rooms-grid {
         grid-template-columns: 1fr;
       }
 
-      .cards,
-      .rooms {
+      .hero-text {
+        padding: 70px 20px;
+      }
+
+      .features-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .gallery {
-        grid-template-columns: 1fr 1fr;
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 660px) {
-      nav {
-        top: 10px;
-        border-radius: 26px;
-      }
-
+    @media (max-width: 560px) {
       .nav-inner {
         align-items: flex-start;
         flex-direction: column;
-        gap: 10px;
       }
 
       .menu {
-        justify-content: flex-start;
         gap: 12px;
       }
 
-      header {
-        padding-top: 170px;
+      section {
+        padding: 58px 0;
       }
 
-      .cards,
-      .rooms,
-      .gallery,
-      .image-stack {
+      .features-grid,
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
 
-      .gallery img,
-      .gallery img:nth-child(1),
-      .gallery img:nth-child(4) {
+      .gallery-grid img,
+      .gallery-grid img:first-child {
         grid-column: auto;
         grid-row: auto;
-        height: 240px;
-      }
-
-      .image-stack .big,
-      .image-stack .small {
-        min-height: 280px;
+        height: 260px;
       }
     }
   </style>
@@ -445,184 +369,149 @@
     </div>
   </nav>
 
-  <header>
-    <div class="hero">
+  <header class="hero">
+    <div class="hero-grid">
       <div class="hero-text">
-        <span class="label">🌲 Duchonka • príroda • oddych</span>
-        <h1>Pokojný pobyt pri lese</h1>
+        <div class="tag">Duchonka • pri lese</div>
+        <h1>Penzión Javorina</h1>
         <p>
-          Penzión Javorina Duchonka je miesto na oddych v prírodnom prostredí,
-          ideálne pre rodiny, páry, partie aj menšie oslavy.
+          Ubytovanie v pokojnom prostredí Duchonky. Ideálne miesto na oddych,
+          rodinný pobyt, turistiku, oslavu alebo víkend s priateľmi.
         </p>
         <div class="buttons">
-          <a href="#kontakt" class="button">Rezervovať pobyt</a>
-          <a href="#galeria" class="button secondary">Pozrieť galériu</a>
+          <a href="#kontakt" class="btn primary">Kontaktovať</a>
+          <a href="#galeria" class="btn secondary">Pozrieť fotky</a>
         </div>
       </div>
-
-      <div class="hero-card">
-        <h3>Ubytovanie v chatovej atmosfére</h3>
-        <p>
-          Svetlý prírodný štýl, lesné prostredie, spoločenské priestory,
-          vonkajšie posedenie a možnosti oddychu v okolí Duchonky.
-        </p>
-      </div>
+      <div class="hero-image" aria-label="Penzión Javorina Duchonka"></div>
     </div>
   </header>
 
   <section id="o-nas">
-    <div class="container split">
-      <div>
-        <div class="section-head">
-          <h2>Miesto, kde si oddýchnete od mesta</h2>
-          <p class="muted">
-            Penzión sa nachádza v zelenom prostredí Duchonky, obklopený stromami
-            a pokojnou atmosférou vhodnou na víkendový aj dlhší pobyt.
-          </p>
-        </div>
+    <div class="container about-grid">
+      <div class="about-photo">
+        <img src="penzion-exterier.jpg" alt="Exteriér Penziónu Javorina">
+      </div>
+      <div class="about-text">
+        <h2>Pokojné miesto v prírode</h2>
+        <p class="text-muted">
+          Penzión Javorina sa nachádza v príjemnom lesnom prostredí pri Duchonke.
+          Ponúka jednoduché a pohodlné ubytovanie pre hostí, ktorí hľadajú pokoj,
+          prírodu a dobré miesto na oddych.
+        </p>
+        <br>
         <p>
-          Hostia môžu využiť ubytovanie, spoločenské priestory, vonkajšie posedenie,
-          ohnisko a priestor na hry či menšie súkromné akcie. Stránku môžeme ešte
-          doplniť o presný cenník, počet izieb a rezervačný formulár.
+          K dispozícii sú izby, spoločenské priestory, vonkajšie posedenie,
+          ohnisko a možnosti trávenia voľného času v okolí.
         </p>
       </div>
-
-      <div class="image-stack">
-        <img class="big" src="penzion-budova.jpg" alt="Budova Penziónu Javorina v prírode">
-        <img class="small" src="penzion-ohnisko.jpg" alt="Vonkajšie posedenie a ohnisko">
-      </div>
     </div>
   </section>
 
-  <section id="ubytovanie" class="warm">
+  <section class="features">
     <div class="container">
-      <div class="section-head">
-        <h2>Ubytovanie a vybavenie</h2>
-        <p class="muted">
-          Jednoduché, príjemné a praktické priestory pre oddych, výlety aj spoločné chvíle.
-        </p>
+      <div class="section-title">
+        <h2>Čo u nás nájdete</h2>
+        <p>Jednoduché vybavenie pre príjemný pobyt na Duchonke.</p>
       </div>
 
-      <div class="cards">
-        <div class="card">
-          <div class="icon">🛏️</div>
-          <h3>Izby</h3>
-          <p>Praktické ubytovanie s možnosťou oddychu po dni pri vode alebo v prírode.</p>
+      <div class="features-grid">
+        <div class="feature">
+          <span>🛏️</span>
+          <h3>Ubytovanie</h3>
+          <p>Izby vhodné na krátky aj dlhší pobyt.</p>
         </div>
-        <div class="card">
-          <div class="icon">🍽️</div>
-          <h3>Spoločenská miestnosť</h3>
-          <p>Priestor vhodný na posedenie, menšie oslavy alebo spoločné chvíle.</p>
+        <div class="feature">
+          <span>🍽️</span>
+          <h3>Spoločenské priestory</h3>
+          <p>Miestnosť vhodná na posedenie alebo oslavu.</p>
         </div>
-        <div class="card">
-          <div class="icon">🔥</div>
-          <h3>Ohnisko</h3>
-          <p>Vonkajšie posedenie v prírode s možnosťou večerného oddychu.</p>
+        <div class="feature">
+          <span>🌲</span>
+          <h3>Príroda</h3>
+          <p>Lesné prostredie a pokojné okolie.</p>
         </div>
-        <div class="card">
-          <div class="icon">🎱</div>
-          <h3>Zábava</h3>
-          <p>Biliard a priestory vhodné na trávenie voľného času aj pri horšom počasí.</p>
+        <div class="feature">
+          <span>🔥</span>
+          <h3>Vonkajšie posedenie</h3>
+          <p>Ohnisko a priestor na oddych vonku.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="container rooms">
-      <article class="room-card">
-        <img src="izba-manzelska.jpg" alt="Manželská izba v penzióne">
-        <div>
-          <h3>Izby pre hostí</h3>
-          <p>Pohodlné izby na krátkodobý aj dlhší pobyt v pokojnom prostredí.</p>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <img src="izba-podkrovie.jpg" alt="Podkrovná izba s dreveným trámom">
-        <div>
-          <h3>Podkrovná atmosféra</h3>
-          <p>Drevené prvky dodávajú ubytovaniu príjemný chatový charakter.</p>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <img src="kupelna.jpg" alt="Kúpeľňa so sprchovým kútom">
-        <div>
-          <h3>Súkromie a komfort</h3>
-          <p>Praktické vybavenie pre pohodlný pobyt hostí.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="galeria" class="warm">
+  <section id="ubytovanie">
     <div class="container">
-      <div class="section-head">
+      <div class="section-title">
+        <h2>Ubytovanie</h2>
+        <p>Ukážka izieb a priestorov penziónu.</p>
+      </div>
+
+      <div class="rooms-grid">
+        <div class="room">
+          <img src="izba-manzelska.jpg" alt="Izba s manželskou posteľou">
+          <div class="room-content">
+            <h3>Izby pre hostí</h3>
+            <p>Jednoduché a praktické izby na oddych po dni strávenom v prírode.</p>
+          </div>
+        </div>
+
+        <div class="room">
+          <img src="izba-podkrovie.jpg" alt="Podkrovná izba">
+          <div class="room-content">
+            <h3>Podkrovné izby</h3>
+            <p>Príjemná chatová atmosféra s drevenými prvkami.</p>
+          </div>
+        </div>
+
+        <div class="room">
+          <img src="kupelna.jpg" alt="Kúpeľňa">
+          <div class="room-content">
+            <h3>Kúpeľňa</h3>
+            <p>Praktické vybavenie pre pohodlný pobyt hostí.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="gallery">
+    <div class="container">
+      <div class="section-title">
         <h2>Galéria</h2>
-        <p class="muted">
-          Pozrite si priestory penziónu, okolie, izby a spoločenské priestory.
-        </p>
+        <p>Fotky penziónu, okolia a spoločenských priestorov.</p>
       </div>
 
-      <div class="gallery">
-        <img src="penzion-terasa.jpg" alt="Terasa penziónu">
+      <div class="gallery-grid">
+        <img src="penzion-budova.jpg" alt="Budova penziónu">
+        <img src="penzion-ohnisko.jpg" alt="Ohnisko">
+        <img src="bar.jpg" alt="Bar">
         <img src="spolocenska-miestnost.jpg" alt="Spoločenská miestnosť">
-        <img src="bar.jpg" alt="Bar v penzióne">
-        <img src="ihrisko.jpg" alt="Vonkajšie ihrisko a posedenie">
-        <img src="biliard.jpg" alt="Biliardová miestnosť">
-        <img src="chodba.jpg" alt="Interiér penziónu">
+        <img src="ihrisko.jpg" alt="Ihrisko">
+        <img src="biliard.jpg" alt="Biliard">
+        <img src="penzion-terasa.jpg" alt="Terasa">
       </div>
     </div>
   </section>
 
-  <section id="okolie">
-    <div class="container split">
-      <div class="image-stack">
-        <img class="big" src="les-okolie.jpg" alt="Lesné okolie penziónu">
-        <img class="small" src="penzion-prichod.jpg" alt="Príchod k penziónu">
+  <section id="kontakt" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Kontakt</h2>
+        <p>Pre rezerváciu alebo viac informácií nás kontaktujte.</p>
       </div>
 
-      <div>
-        <div class="section-head">
-          <h2>Okolie Duchonky</h2>
-          <p class="muted">
-            Duchonka je vhodná na prechádzky, cyklistiku, kúpanie, oddych pri vode
-            a pobyt v prírode.
-          </p>
-        </div>
-        <p>
-          V blízkosti sa nachádzajú lesy, vodná nádrž a možnosti trávenia voľného času.
-          Táto časť môže obsahovať aj tipy na výlety, vzdialenosti a mapu.
-        </p>
+      <div class="contact-card">
+        <p><strong>Penzión Javorina Duchonka</strong></p>
+        <p><strong>Telefón:</strong> <a href="tel:+421900000000">+421 900 000 000</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@penzionjavorina.sk">info@penzionjavorina.sk</a></p>
+        <p><strong>Adresa:</strong> Duchonka, Slovensko</p>
       </div>
-    </div>
-  </section>
-
-  <section id="kontakt" class="contact-section">
-    <div class="container contact-grid">
-      <div>
-        <div class="section-head">
-          <h2>Kontakt a rezervácia</h2>
-          <p class="muted">
-            Máte záujem o pobyt? Kontaktujte nás a radi vám poskytneme viac informácií.
-          </p>
-        </div>
-        <div class="contact-box">
-          <p><strong>Telefón:</strong> <a href="tel:+421900000000">+421 900 000 000</a></p>
-          <p><strong>Email:</strong> <a href="mailto:info@penzionjavorina.sk">info@penzionjavorina.sk</a></p>
-          <p><strong>Adresa:</strong> Duchonka, Slovensko</p>
-          <br>
-          <p>Sem doplníme presné rezervačné údaje, prípadne odkaz na Booking, Facebook alebo Google Mapy.</p>
-        </div>
-      </div>
-
-      <div class="contact-photo" aria-label="Fotografia penziónu"></div>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Penzión Javorina Duchonka. Všetky práva vyhradené.</p>
+    <p>© 2026 Penzión Javorina Duchonka</p>
   </footer>
 </body>
 </html>
